@@ -13,6 +13,12 @@ _main = (args) => {
   // enter selection group
   var enter_selection_g = Main_Context.canvas.append("g")
                                               .attr("id","enter_selection_g");
+  
+  enter_selection_g.append("text")
+                    .text("enter selection")
+                    .attr("dx",45)
+                    .attr("dy",40)
+                    .style("font-size",20);
 
   // enter selection example 
   enter_selection_g.append("circle")
@@ -40,14 +46,20 @@ _main = (args) => {
   var update_selection_g = Main_Context.canvas.append("g")
                                               .attr("id", "update_selection_g")
 
+  enter_selection_g.append("text")
+                    .text("update selection")
+                    .attr("dx",235)
+                    .attr("dy",40)
+                    .style("font-size",20);                                              
+
   // update selection example 
   update_selection_g.append("circle")
-                      .attr("cx", 250)
+                      .attr("cx", 300)
                       .attr("cy", 100)
                       .attr("r",50)      
 
   update_selection_g.append("circle")
-                      .attr("cx", 250)
+                      .attr("cx", 300)
                       .attr("cy", 250)
                       .attr("r",50)      
 
@@ -71,14 +83,21 @@ _main = (args) => {
   var update_selection_g = Main_Context.canvas.append("g")
                                               .attr("id", "update_selection_g")
 
-  // exit selection example 
+                                              
+  update_selection_g.append("text")
+                    .text("exit selection")
+                    .attr("dx",445)
+                    .attr("dy",40)
+                    .style("font-size",20);
+
+  // exit selection example //
   update_selection_g.append("circle")
-                      .attr("cx", 400)
+                      .attr("cx", 500)
                       .attr("cy", 100)
                       .attr("r",50)      
 
   update_selection_g.append("circle")
-                      .attr("cx", 400)
+                      .attr("cx", 500)
                       .attr("cy", 250)
                       .attr("r",50)      
 
@@ -91,8 +110,9 @@ _main = (args) => {
   // exit selection : 1
   update_selection_g.selectAll("circle")
                       .data(dataForExit)
+                      .attr("fill","red")
                       .exit()
-                        .attr("fill", "gray")
+                        .attr("fill", "black")
 
 }
 
